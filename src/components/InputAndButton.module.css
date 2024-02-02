@@ -1,0 +1,43 @@
+.inputTask {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    transform: translateY(-50%); /* Move vertivalmente um objeto relativo a sua propria altura */
+}
+
+.inputTask input{
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--color-gray-500);
+    color: var(--color-gray-100);
+    border: 1px solid var(--color-gray-700);
+    height: 3.375rem;
+    padding: 1rem;
+}
+
+.inputTask > input:focus {
+    outline: transparent;
+    border-color: var(--color-purpledark);
+}
+
+.inputTask > button {
+    width: 5.625rem;
+    height: 3.25rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--color-blue-dark);
+    border: none;
+    color: var(--color-gray-100);
+    font-weight: bold;
+    gap: 0.5rem;
+    line-height: 1.4;
+    font-size: 0.875rem;
+    transition: 0.1s;
+}
+
+.inputTask > button:hover{
+    background-color: var(--color-blue);
+}
