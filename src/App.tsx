@@ -1,10 +1,10 @@
-import rocketLogo from './assets/rocket.svg'
+
 import './global.css';
 import styles from './App.module.css'
 import { Header } from './components/Header';
 import { Header as HeaderList} from './components/Tasks/Header'
 import {ImputAndButton} from './components/ImputAndButton'
-import { TaskList } from './components/Tasks/Task';
+import { Task } from './components/Tasks/Task';
 
 
 function App() {
@@ -19,7 +19,9 @@ function App() {
         <section className={styles.sectionTasks}>
           <HeaderList />
           <aside className={styles.sectionTasksList}>
-          <TaskList />
+          <Task />
+          <Task />
+          <Task />
           </aside>
         </section>
         
