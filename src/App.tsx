@@ -4,7 +4,7 @@ import styles from './App.module.css'
 import { Header } from './components/Header';
 import { Header as HeaderList} from './components/Tasks/Header'
 import {ImputAndButton} from './components/ImputAndButton'
-import { Task } from './components/Tasks/Task';
+import { EmptyTaskList } from './components/Tasks/EmptyTaskList';
 
 
 function App() {
@@ -19,9 +19,7 @@ function App() {
         <section className={styles.sectionTasks}>
           <HeaderList />
           <aside className={styles.sectionTasksList}>
-          <Task />
-          <Task />
-          <Task />
+          <EmptyTaskList />
           </aside>
         </section>
         

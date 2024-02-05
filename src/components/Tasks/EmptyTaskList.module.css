@@ -1,0 +1,19 @@
+.container{
+    border-top: 1px solid var(--color-gray-400);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 4rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.container p {
+    color: var(--color-gray-300);
+}
+
+.container p:first-child {
+    font-weight: bold;
+}
