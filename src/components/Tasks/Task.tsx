@@ -9,20 +9,26 @@ export interface TaskType {
 
 interface TaskProps {
   task: TaskType;
-  onDeleteTask: (id: string) => void
+  onDeleteTask: (id: string) => void;
+  onCheckTask: (id: string) => void
 }
 
-export function Task({task, onDeleteTask} : TaskProps) {
+export function Task({task, onDeleteTask, onCheckTask} : TaskProps) {
 
   function handleDeleteTask(){
     const confirmDelete = window.confirm('Tem certeza que deseja deletar esta tarefa?')
     if(confirmDelete) onDeleteTask(task.id)
   }
 
+  function handleCheckTask() {
+    onCheckTask(task.id)
+  }
+
+
   return (
       <div className={styles.task}>
 
-          <label htmlFor="checkbox" >
+          <label htmlFor="checkbox" onClick={handleCheckTask}>
             <input readOnly type="checkbox" checked={false} />
             {task.isDone ? 
             <span className={styles.checkedBox}><Check size={12} /></span>

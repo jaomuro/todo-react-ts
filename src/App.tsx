@@ -20,9 +20,7 @@ function App() {
 
   function addTask(newTask: TaskType){
     setTasks([...tasks, newTask]);
-
   }
-
 
   function deleteTask(id: string) {
     const tasksWithoutDeletdOne = tasks.filter( task => {
@@ -31,7 +29,19 @@ function App() {
     setTasks(tasksWithoutDeletdOne)
   }
 
+  function checkTask(id: string){
+    const updatedTasks = tasks.map(task => {
+      if(task.id === id) {
+        return {...task, isDone: !task.isDone}
+      }else{
+        return {...task}
+      }
+    })
 
+    setTasks(updatedTasks)
+  }
+
+console.log(tasks)
 
   return (
     <main>
@@ -48,7 +58,7 @@ function App() {
            <EmptyTaskList /> 
            :
            tasks.map((t) => {
-            return <Task key={t.id} task={t} onDeleteTask={deleteTask}/>
+            return <Task key={t.id} task={t} onDeleteTask={deleteTask} onCheckTask={checkTask}/>
             })
           }
 

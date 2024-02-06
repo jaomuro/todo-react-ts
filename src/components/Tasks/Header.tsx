@@ -15,7 +15,7 @@ export function Header({countTasks, countDoneTasks}:HeaderProps) {
             </div>
             <div className={styles.doneTasks}>
             <h4>Concluídas</h4>
-            {countDoneTasks > 0 ?
+            {countTasks > 0 ?
             <span>{countDoneTasks} de {countTasks}</span>:
             <span>{countDoneTasks}</span>}
               

@@ -2,7 +2,7 @@ import { PlusCircle } from '@phosphor-icons/react'
 
 import styles from './InputAndButton.module.css'
 import { TaskType } from './Tasks/Task'
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -13,17 +13,17 @@ interface InputProps {
 export function ImputAndButton({onCreateTask}: InputProps) {
     const [inputTask, setInputTask] = useState('');
 
-    function handleChangeInputs(evt){
+    function handleChangeInputs(evt:ChangeEvent<HTMLInputElement>){
         setInputTask(evt.target.value)
     }
 
-    function handleCreateTask(evt){
+    function handleCreateTask(evt: FormEvent){
         evt.preventDefault()
-        console.log(inputTask)
+        if(!inputTask) return
         const newTask: TaskType = {
             id: uuidv4(),
             content: inputTask,
-            isDone: true
+            isDone: false
         }
         console.log(newTask)
         onCreateTask(newTask)
